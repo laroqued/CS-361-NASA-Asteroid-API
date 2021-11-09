@@ -1,0 +1,38 @@
+<h1>Near Earth Objects (Asteroids)</h1>
+ <input id="searchTerm" type="text" placeholder="Enter date" />
+    <button id="search">
+        Search
+    </button>
+<br>
+<br>
+    <div>
+ <input id="Display" type="text" placeholder="Display JSON" />
+    <button id="display">
+        Display
+    </button>
+    </div>
+<br>
+
+    <div>
+ <input id="Download" type="text" placeholder="Download JSON" />
+    <button id="download">
+        Download
+    </button>
+    </div>
+
+    <div id="content2">
+        Close Approach Date:
+    </div>
+    <div id="content">
+        Diameter:
+    </div>
+    <div id="content1">
+        Magnitude:
+    </div>
+    <body>
+    <!-- https://code.tutsplus.com/tutorials/file-upload-with-multer-in-node--cms-32088 -->
+    <form action="http://localhost:3500/upload" enctype="multipart/form-data" method="POST">
+        <input type="file" name="data" />
+        <input type="submit" value="Upload a file" />
+    </form>
+</body>
