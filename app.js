@@ -11,9 +11,40 @@ const handlebars = require("express-handlebars").create({
 const path = require("path");
 
 app.use(express.urlencoded({ extended: false }));
-const cors = require("cors");
 app.use(express.json());
-app.use(cors());
+
+const cors = require("cors");
+const allowedOrigins = [
+    "http://localhost:5300",
+    `http://localhost:5300/getAsteroidData`,
+    "http://localhost:58471/data?waypoint=2",
+    "http://localhost:58471",
+];
+
+app.use(
+    cors({
+        origin: function(origin, callback) {
+            if (!origin) return callback(null, true);
+            if (allowedOrigins.indexOf(origin) === -1) {
+                var msg =
+                    "The CORS policy for this site does not " +
+                    "allow access from the specified Origin.";
+                return callback(new Error(msg), false);
+            }
+            return callback(null, true);
+        },
+    })
+);
+
+// API entry for other Group Members
+app.get("/listAsteroids", function(req, res) {
+    fs.readFile(__dirname + "/" + "nasa_api.json", "utf8", function(err, data) {
+        console.log(data);
+        res.end(data);
+    });
+});
+
+
 
 app.use(express.static("public"));
 
@@ -23,12 +54,21 @@ app.set("view engine", "handlebars");
 
 
 
-let port = process.env.PORT;
-let host = process.env.HOST;
+
 
 app.get("/", function(req, res) {
 
     res.render("index");
+});
+
+
+
+// API entry
+app.get("/getAsteroidData", function(req, res) {
+    fs.readFile(__dirname + "/" + "nasa_api.json", "utf8", function(err, data) {
+        console.log(data);
+        res.end(data);
+    });
 });
 
 //=========================================================================
@@ -92,7 +132,8 @@ app.use(function(err, req, res, next) {
 });
 
 
-
+let port = process.env.PORT;
+let host = process.env.HOST;
 app.listen(port, host, () => {
     console.log(
         `Express started \on http//:${host}:${port} press Ctrl-C to terminate.`
