@@ -101,23 +101,23 @@ endDate = "2021-10-02";
 //     })
 //     .catch((err) => console.log(err));
 
-//=========================================================================
-// function downloadURL(url, name) {
-//     var link = document.createElement("a");
-//     link.download = name;
-//     link.href = url;
-//     document.body.appendChild(link);
-//     link.click();
-//     document.body.removeChild(link);
-//     delete link;
-// }
+// =========================================================================
+function downloadURL(url, name) {
+    var link = document.createElement("a");
+    link.download = name;
+    link.href = url;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    delete link;
+}
 
-// function downloadFile() {
-//     var data = "okay this is epic";
-//     var blob = new Blob([data], { type: 'text/txt' });
-//     var url = window.URL.createObjectURL(blob);
-//     downloadURL(url, "test.txt");
-// }
+function downloadFile() {
+    var data = "okay this is epic";
+    var blob = new Blob([data], { type: 'text/txt' });
+    var url = window.URL.createObjectURL(blob);
+    downloadURL(url, "test.txt");
+}
 
 
 app.use(function(req, res) {
