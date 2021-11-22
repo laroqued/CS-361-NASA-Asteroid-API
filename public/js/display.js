@@ -19,6 +19,6 @@ async function displayApiRequest() {
         console.log(response.data.url);
         console.log(response.data.near_earth_objects);
     } catch (error) {
-        // console.log(error.response.body);
+        console.log(error.response.body);
     }
 }

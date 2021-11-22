@@ -1,8 +1,8 @@
-let downloadButton = document.querySelector("#download");
+let downloadButton = document.querySelector("#roveridia");
 
 
 downloadButton.addEventListener("click", () => {
-    console.log("download pressed");
+    console.log("roveridia pressed");
     downloadApiRequest();
 });
 //An asynchronous function to fetch data from the API.
@@ -18,6 +18,6 @@ async function downloadApiRequest() {
 
         console.log(response.data);
     } catch (error) {
-        // console.log(error.response.body);
+        console.log(error.response.body);
     }
 }

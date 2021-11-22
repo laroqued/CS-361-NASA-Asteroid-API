@@ -20,6 +20,10 @@ const allowedOrigins = [
     `http://localhost:5300/getAsteroidData`,
     "http://localhost:58471/data?waypoint=2",
     "http://localhost:58471",
+    "http://localhost:4000",
+    "http://localhost:4000/files",
+    "http://localhost:4000/files/output.csv",
+    "http://localhost:4000/getExoPlanet",
 ];
 
 app.use(
@@ -73,9 +77,9 @@ app.get("/getAsteroidData", function(req, res) {
 });
 
 //=========================================================================
-API_KEY = "ahutoSbmiRJp7CUBrL5s2yefa7OrVrKw1zsel4VF";
-startDate = "2021-10-01";
-endDate = "2021-10-02";
+// API_KEY = "ahutoSbmiRJp7CUBrL5s2yefa7OrVrKw1zsel4VF";
+// startDate = "2021-10-01";
+// endDate = "2021-10-02";
 
 // (async() => {
 //     try {
@@ -102,22 +106,23 @@ endDate = "2021-10-02";
 //     .catch((err) => console.log(err));
 
 // =========================================================================
-function downloadURL(url, name) {
-    var link = document.createElement("a");
-    link.download = name;
-    link.href = url;
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-    delete link;
-}
+// function downloadURL(url, name) {
+//     var link = document.createElement("a");
+//     link.download = name;
+//     link.href = url;
+//     document.body.appendChild(link);
+//     link.click();
+//     document.body.removeChild(link);
+//     delete link;
+// }
 
-function downloadFile() {
-    var data = "okay this is epic";
-    var blob = new Blob([data], { type: 'text/txt' });
-    var url = window.URL.createObjectURL(blob);
-    downloadURL(url, "test.txt");
-}
+// function downloadFile() {
+//     var data = "okay this is epic";
+//     var blob = new Blob([data], { type: 'text/txt' });
+//     var url = window.URL.createObjectURL(blob);
+//     downloadURL(url, "test.txt");
+// }
+// =========================================================================
 
 
 app.use(function(req, res) {
@@ -132,9 +137,9 @@ app.use(function(err, req, res, next) {
     res.render("500");
 });
 
-
-let port = process.env.PORT;
-let host = process.env.HOST;
+// Create a .env file to use process.env
+let port = process.env.PORT; // OR let port = '5300'
+let host = process.env.HOST; // OR let host = 'localhost'
 app.listen(port, host, () => {
     console.log(
         `Express started \on http//:${host}:${port} press Ctrl-C to terminate.`
