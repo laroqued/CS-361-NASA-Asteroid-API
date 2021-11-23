@@ -11,14 +11,8 @@
         text-align: center;
     }
     
-    #content {
-        text-align: center;
-    }
-    
-    #content1 {
-        text-align: center;
-    }
-    
-    #content2 {
-        text-align: center;
+    .user {
+        background-color: rgb(195, 235, 235);
+        padding: 1rem;
+        margin-bottom: 1rem;
     }

@@ -1,8 +1,46 @@
+
+
 <h1>Near Earth Objects (Asteroids)</h1>
- <input id="searchTerm" type="text" placeholder="Enter date" />
+
+<span class="label">Start Date:</span>
+
+       <input id="wrapperDateValue1" type="text" name="" required pattern="\d{4}-\d{2}-\d{2}">
+
+<br>
+<br>
+<span class="label">End Date:</span>
+
+       <input id="wrapperDateValue2" type="text" name="" required pattern="\d{4}-\d{2}-\d{2}">
+       <br>
+       <br>
+       <div>
+
     <button id="search">
         Search
     </button>
+       </div>
+    
+ <div id="app"></div>
+
+
+
+
+
+
+
+
+
+
+   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/css/bootstrap-datepicker.css" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/js/bootstrap-datepicker.js">
+    </script>
+
+
 <br>
 <br>
     <div>
@@ -15,15 +53,7 @@
 
 
 
-    <div id="content2">
-        Close Approach Date:
-    </div>
-    <div id="content">
-        Diameter:
-    </div>
-    <div id="content1">
-        Magnitude:
-    </div>
+ 
  
     <div>
   <label for="javascript">Roveridia Microservice:</label><br><br>
