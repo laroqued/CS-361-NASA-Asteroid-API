@@ -18,7 +18,13 @@ const cors = require("cors");
 const allowedOrigins = [
     "http://localhost:5300",
     `http://localhost:5300/getAsteroidData`,
+    "http://localhost:58471/data?waypoint=1",
     "http://localhost:58471/data?waypoint=2",
+    "http://localhost:58471/data?waypoint=3",
+    "http://localhost:58471/data?waypoint=4",
+    "http://localhost:58471/data?waypoint=5",
+    "http://localhost:58471/data?waypoint=6",
+    "http://localhost:58471/data?waypoint=7",
     "http://localhost:58471",
     "http://localhost:4000",
     "http://localhost:4000/files",
@@ -59,16 +65,25 @@ app.set("view engine", "handlebars");
 
 
 
-
-
+// -----------------------------------
 app.get("/", function(req, res) {
-
     res.render("index");
 });
 
+app.get("/exoplanets", function(req, res) {
+    res.render("exoplanets");
+});
+
+app.get("/roveridia", function(req, res) {
+    res.render("roveridia");
+});
+// -----------------------------------
 
 
-// API entry
+
+
+
+// API entry 
 app.get("/getAsteroidData", function(req, res) {
     fs.readFile(__dirname + "/" + "nasa_api.json", "utf8", function(err, data) {
         console.log(data);

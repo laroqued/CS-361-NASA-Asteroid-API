@@ -1,3 +1,7 @@
+window.addEventListener("DOMContentLoaded", (event) => {
+    console.log("public.js fully loaded and parsed");
+});
+
 let datePickerDate1 = document.getElementById("wrapperDateValue1");
 let datePickerDate2 = document.getElementById("wrapperDateValue2");
 let searchButton = document.querySelector("#search");
@@ -42,7 +46,7 @@ function fetchData() {
                             <p>Relative Velocity (MPH): ${user.close_approach_data[0].relative_velocity.miles_per_hour}</p>
                             <p>Estimated Diameter (MIN): ${user.estimated_diameter.miles.estimated_diameter_min}</p>
                             <p>Estimated Diameter (MAX): ${user.estimated_diameter.miles.estimated_diameter_max}</p>
-                            <p  href="${user.nasa_jpl_url}">  NASA JPL URL: ${user.nasa_jpl_url}"  </p>
+                            <p  href="${user.nasa_jpl_url}">  NASA JPL URL: ${user.nasa_jpl_url}  </p>
                     
                             </div>
                 `;

@@ -1,3 +1,7 @@
+window.addEventListener("DOMContentLoaded", (event) => {
+    console.log("exoplanets.js fully loaded and parsed");
+});
+
 let exoPlanetsButton = document.querySelector("#exoplanets");
 
 exoPlanetsButton.addEventListener("click", () => {
@@ -12,6 +16,6 @@ async function exoPlanetsApiRequest() {
 
         console.log(response.data);
     } catch (error) {
-        // console.log(error.response.body);
+        console.log(error.response.body);
     }
 }
