@@ -58,7 +58,7 @@ app.get("/listAsteroids", function(req, res) {
 
 
 app.use(express.static("public"));
-
+app.use(express.static("public/img/exoplanet.jpg"));
 app.engine("handlebars", handlebars.engine);
 app.set("view engine", "handlebars");
 
